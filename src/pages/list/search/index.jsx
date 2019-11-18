@@ -79,6 +79,7 @@ class Search extends Component {
     return (
       <PageHeaderWrapper
         content={mainSearch}
+        title={false}
         tabList={tabList}
         tabActiveKey={this.getTabKey()}
         onTabChange={this.handleTabChange}

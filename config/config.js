@@ -99,7 +99,7 @@ export default {
               name: 'login',
               icon: 'smile',
               path: '/user/login',
-              component: './user/login',
+              component: './user/skyline-login',
             },
             {
               name: 'register-result',
@@ -111,7 +111,13 @@ export default {
               name: 'register',
               icon: 'smile',
               path: '/user/register',
-              component: './user/register',
+              component: './user/skyline-register',
+            },
+            {
+              name: 'password',
+              icon: 'smile',
+              path: '/user/password',
+              component: './user/skyline-password',
             },
             {
               component: '404',
@@ -225,6 +231,12 @@ export default {
                   icon: 'smile',
                   path: '/list/card-list',
                   component: './list/card-list',
+                },
+                {
+                  name: 'skyline-table',
+                  icon: 'smile',
+                  path: '/list/skyline-table',
+                  component: './list/skyline-table',
                 },
               ],
             },
@@ -380,7 +392,7 @@ export default {
           .split('/')
           .map(a => a.replace(/([A-Z])/g, '-$1'))
           .map(a => a.toLowerCase());
-        return `antd-pro${arr.join('-')}-${localName}`.replace(/--/g, '-');
+        return `skyline-ui${arr.join('-')}-${localName}`.replace(/--/g, '-');
       }
 
       return localName;

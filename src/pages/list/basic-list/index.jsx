@@ -23,6 +23,7 @@ import { connect } from 'dva';
 import { findDOMNode } from 'react-dom';
 import moment from 'moment';
 import styles from './style.less';
+
 const FormItem = Form.Item;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -39,6 +40,7 @@ class BasicList extends Component {
     done: false,
     current: undefined,
   };
+
   formLayout = {
     labelCol: {
       span: 7,
@@ -47,6 +49,7 @@ class BasicList extends Component {
       span: 13,
     },
   };
+
   addBtn = undefined;
 
   componentDidMount() {
@@ -65,12 +68,14 @@ class BasicList extends Component {
       current: undefined,
     });
   };
+
   showEditModal = item => {
     this.setState({
       visible: true,
       current: item,
     });
   };
+
   handleDone = () => {
     setTimeout(() => this.addBtn && this.addBtn.blur(), 0);
     this.setState({
@@ -78,12 +83,14 @@ class BasicList extends Component {
       visible: false,
     });
   };
+
   handleCancel = () => {
     setTimeout(() => this.addBtn && this.addBtn.blur(), 0);
     this.setState({
       visible: false,
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
     const { dispatch, form } = this.props;
@@ -104,6 +111,7 @@ class BasicList extends Component {
       });
     });
   };
+
   deleteItem = id => {
     const { dispatch } = this.props;
     dispatch({

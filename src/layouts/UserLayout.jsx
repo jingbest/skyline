@@ -32,23 +32,26 @@ const UserLayout = props => {
       })}
     >
       <div className={styles.container}>
-        <div className={styles.lang}>
-          <SelectLang />
-        </div>
-        <div className={styles.content}>
-          <div className={styles.top}>
-            <div className={styles.header}>
-              <Link to="/">
-                <img alt="logo" className={styles.logo} src={logo} />
-                <span className={styles.title}>Ant Design</span>
-              </Link>
-            </div>
-            <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+        <div className={styles.left}>
+          <div className={styles.lang}>
+            <SelectLang />
           </div>
-          {children}
+          <div className={styles.content}>
+            <div className={styles.top}>
+              <div className={styles.header}>
+                <Link to="/">
+                  <img alt="logo" className={styles.logo} src={logo} />
+                </Link>
+              </div>
+            </div>
+            {children}
+          </div>
+          {/* <DefaultFooter /> */}
         </div>
-        <DefaultFooter />
+
+        <div className={styles.right}></div>
       </div>
+
     </DocumentTitle>
   );
 };

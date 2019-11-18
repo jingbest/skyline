@@ -73,7 +73,7 @@ class BasicForm extends Component {
       },
     };
     return (
-      <PageHeaderWrapper content={<FormattedMessage id="formandbasic-form.basic.description" />}>
+      <PageHeaderWrapper title={false}>
         <Card bordered={false}>
           <Form
             onSubmit={this.handleSubmit}
