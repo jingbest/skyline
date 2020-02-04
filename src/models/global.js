@@ -2,7 +2,7 @@ import { queryNotices } from '@/services/user';
 const GlobalModel = {
   namespace: 'global',
   state: {
-    collapsed: false,
+    collapsed: true,
     notices: [],
   },
   effects: {
@@ -76,6 +76,15 @@ const GlobalModel = {
       { payload },
     ) {
       return { ...state, collapsed: payload };
+    },
+
+    toggleLayoutCollapsed(
+      state = {
+        notices: [],
+        collapsed: true,
+      },
+    ) {
+      return { ...state, collapsed: !state.collapsed };
     },
 
     saveNotices(state, { payload }) {

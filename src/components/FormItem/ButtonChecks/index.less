@@ -1,0 +1,44 @@
+.wrapper {
+  overflow-y: auto;
+  max-height: 50vh;
+}
+.item {
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 4px;
+  text-align: left;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 8px;
+  line-height: 40px;
+  cursor: pointer;
+
+  &.active {
+    color: #1890FF;
+    background-color: rgba(24, 144, 255, 0.10);
+    border: none;
+  }
+
+  span {
+    margin-right: 8px;
+  }
+
+  .extra {
+    float: right;
+    margin-right: 30px;
+  }
+
+  .right {
+    position: absolute;
+    right: 0;
+    // float: right;
+  }
+}
+.empty-item {
+  padding: 0px 15px;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  line-height: 40px;
+  display: inline-block;
+}

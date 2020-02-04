@@ -1,0 +1,71 @@
+.modal {
+  :global {
+    .ant-modal-header {
+      background-color: black;
+    }
+    .ant-modal-title {
+      color: #fff;
+      font-size: 1.5em;
+    }
+    .ant-modal-close {
+      color: #fff;
+    }
+    .ant-modal-body {
+      padding: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .ant-steps-item-content {
+      display: block;
+    }
+    .ant-steps-item-title::after {
+      top: -14px;
+    }
+  }
+
+  .left {
+    width: 100%;
+    height: 610px;
+    background-color: #fff;
+    float: left;
+    position: relative;
+
+    .steps {
+      padding: 30px 100px;
+      height: 125px;
+      background-color: rgba(232,232,232,0.30);
+    }
+    .main {
+      padding: 30px;
+      height: 540px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 65px;
+      background-color: rgba(232,232,232,0.30);
+      padding: 15px 25px 0px 25px;
+
+      .confirm {
+        float: right;
+      }
+    }
+  }
+
+  .right {
+    width: 25%;
+    height: 610px;
+    background-color: rgba(232,232,232,0.50);
+    float: right;
+  }
+}
+
+.has-right {
+  .left {
+    width: 75%;
+  }
+}

@@ -5,13 +5,38 @@ function getFakeCaptcha(req, res) {
 export default {
   // 支持值为 Object 和 Array
   'GET /api/currentUser': {
-    name: 'Serati Ma',
-    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
-    userid: '00000001',
-    email: 'antdesign@alipay.com',
-    signature: '海纳百川，有容乃大',
-    title: '交互专家',
-    group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
+    "username": "admin",
+    "project_name": "admin",
+    "user_domain_id": "default",
+    "roles": [{
+      "name": "project_admin"
+    }, {
+      "name": "admin"
+    }, {
+      "name": "heat_stack_owner"
+    }, {
+      "name": "project_payer"
+    }],
+    "services_region": "RegionOne",
+    "domain_context_name": null,
+    "user_domain_name": "Default",
+    "enabled": true,
+    "domain_name": null,
+    "id": "8cc65e16478b4b21815b1505c9042b0c",
+    "available_services_regions": ["RegionOne"],
+    "is_superuser": true,
+    "token": "gAAAAABd6GPmT8AtGcU4QN-JbZNj4zqAfqnW4NxaomoI4DNZo0qaC0buGCf1th4-YwFPz-4akEiRRPQXS-08B4PV3KK1bQMbkUSO1kugLKnQ82CVoE2hdtBV8IVIP3cvueB0f743R8locZRZ3nTB67oWczXl1oaWA0vOdZOm-pxeT4vmjmpadOmGy9RSgr2JTNi6cKNYb9M8",
+    "auth_url": "https://172.16.50.253:5000",
+    "project_id": "41b10ba1ffaf45d6ab82e9abf8f1e674",
+    "domain_id": null,
+    "domain_context": null,
+    project_name: 'admin',
+    project_id: '41b10ba1ffaf45d6ab82e9abf8f1e674',
+    default_project_id: '41b10ba1ffaf45d6ab82e9abf8f1e674',
+    projects: [{
+      id: '41b10ba1ffaf45d6ab82e9abf8f1e674',
+      name: 'admin',
+    }],
     tags: [
       {
         key: '0',

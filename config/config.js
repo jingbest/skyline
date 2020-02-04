@@ -6,7 +6,8 @@ const { pwa, primaryColor } = defaultSettings; // preview.pro.ant.design only do
 // preview.pro.ant.design 专用环境变量，请不要在你的项目中使用它。
 
 const { ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION } = process.env;
-const isAntDesignProPreview = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site';
+// const isAntDesignProPreview = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site';
+const isAntDesignProPreview = false;
 const plugins = [
   [
     'umi-plugin-react',
@@ -30,11 +31,11 @@ const plugins = [
       // },
       pwa: pwa
         ? {
-            workboxPluginMode: 'InjectManifest',
-            workboxOptions: {
-              importWorkboxFrom: 'local',
-            },
-          }
+          workboxPluginMode: 'InjectManifest',
+          workboxOptions: {
+            importWorkboxFrom: 'local',
+          },
+        }
         : false, // default close dll, because issue https://github.com/ant-design/ant-design-pro/issues/4665
       // dll features https://webpack.js.org/plugins/dll-plugin/
       // dll: {
@@ -54,20 +55,20 @@ const plugins = [
   ],
 ]; // 针对 preview.pro.ant.design 的 GA 统计代码
 
-if (isAntDesignProPreview) {
-  plugins.push([
-    'umi-plugin-ga',
-    {
-      code: 'UA-72788897-6',
-    },
-  ]);
-  plugins.push([
-    'umi-plugin-pro',
-    {
-      serverUrl: 'https://us-central1-antd-pro.cloudfunctions.net/api',
-    },
-  ]);
-}
+// if (isAntDesignProPreview) {
+//   plugins.push([
+//     'umi-plugin-ga',
+//     {
+//       code: 'UA-72788897-6',
+//     },
+//   ]);
+//   plugins.push([
+//     'umi-plugin-pro',
+//     {
+//       serverUrl: 'https://us-central1-antd-pro.cloudfunctions.net/api',
+//     },
+//   ]);
+// }
 
 export default {
   plugins,
@@ -233,10 +234,29 @@ export default {
                   component: './list/card-list',
                 },
                 {
-                  name: 'skyline-table',
+                  // exact: true,
+                  name: 'compute',
                   icon: 'smile',
-                  path: '/list/skyline-table',
-                  component: './list/skyline-table',
+                  path: '/list/compute',
+                  hideChildrenInMenu: true,
+                  routes: [
+                    // {
+                    //   path: '/list/compute',
+                    //   redirect: '/list/compute/list',
+                    // },
+                    {
+                      name: 'compute-list',
+                      path: '/list/compute',
+                      component: './list/compute',
+                    },
+                    {
+                      // exact: true,
+                      name: 'compute-detail',
+                      path: '/list/compute/:id',
+                      component: './list/compute/detail',
+                      hideInMenu: true,
+                    },
+                  ]
                 },
               ],
             },
@@ -307,6 +327,7 @@ export default {
               name: 'account',
               icon: 'user',
               path: '/account',
+              hideInMenu: true,
               routes: [
                 {
                   name: 'center',
@@ -370,6 +391,9 @@ export default {
   },
   ignoreMomentLocale: true,
   lessLoaderOptions: {
+    // modifyVars: {
+    //   'hack': `true; @import "~@/styles/var.less";`,
+    // },
     javascriptEnabled: true,
   },
   disableRedirectHoist: true,

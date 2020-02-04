@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals = 2; plural = (n != 1);\n"
+"Language: en\n"
+"mime-version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/pages/list/skyline-table/index.jsx:269
+msgid "me"
+msgstr ""
+
+#: src/pages/list/skyline-table/actions/action3.jsx:12
+msgid "name"
+msgstr ""
+
+#: src/pages/list/skyline-table/actions/action3.jsx:13
+msgid "please input"
+msgstr ""

@@ -2,7 +2,11 @@ import { queryCurrent, query as queryUsers } from '@/services/user';
 const UserModel = {
   namespace: 'user',
   state: {
-    currentUser: {},
+    currentUser: {
+      project_name: '',
+      project_id: '',
+      projects: [],
+    },
   },
   effects: {
     *fetch(_, { call, put }) {

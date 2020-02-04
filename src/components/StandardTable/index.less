@@ -1,0 +1,46 @@
+@import '~antd/es/style/themes/default.less';
+
+.standard-table {
+  :global {
+    .ant-table-pagination {
+      margin-top: 24px;
+    }
+    .ant-table {
+      min-height: 400px;
+    }
+  }
+
+  .table-alert {
+    margin-bottom: 16px;
+  }
+}
+
+.first-action {
+  padding: 0;
+
+  span {
+    width: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+  }
+}
+
+.more-action {
+  padding: 0;
+}
+
+.table-card {
+  padding: 0;
+
+  :global(.ant-card-body) {
+    padding: 0;
+  }
+}
+.table-action {
+  margin-right: 5px;
+}
+.table-primary-buttons-wrapper {
+  display: inline-block;
+}

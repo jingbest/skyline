@@ -187,8 +187,8 @@ class Center extends PureComponent {
                     </p>
                     <p>
                       <i className={styles.address} />
-                      {currentUser.geographic.province.label}
-                      {currentUser.geographic.city.label}
+                      {/* {currentUser.geographic.province.label}
+                      {currentUser.geographic.city.label} */}
                     </p>
                   </div>
                   <Divider dashed />

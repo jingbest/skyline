@@ -10,6 +10,7 @@
   line-height: @layout-header-height;
   vertical-align: top;
   cursor: pointer;
+
   img {
     display: inline-block;
     vertical-align: middle;
@@ -20,17 +21,36 @@
   :global(.anticon) {
     margin-right: 8px;
   }
+
   :global(.ant-dropdown-menu-item) {
-    min-width: 160px;
+    min-width: 245px;
+  }
+
+  .no-hover {
+    overflow: hidden;
+    &:hover {
+      background-color: #fff;
+    }    
+  }
+
+  .name-item {
+    padding: 0 12px;
+  }
+
+  .language-item {
+    button {
+      height: 22px;
+    }
   }
 }
 
 .trigger {
   height: @layout-header-height;
-  padding: ~'calc((@{layout-header-height} - 20px) / 2)' 24px;
+  padding:~'calc((@{layout-header-height} - 20px) / 2)'24px;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s, padding 0s;
+
   &:hover {
     background: @pro-header-hover-bg;
   }
@@ -41,47 +61,66 @@
   height: 100%;
   margin-left: auto;
   overflow: hidden;
+
   .action {
     display: inline-block;
     height: 100%;
     padding: 0 12px;
     cursor: pointer;
     transition: all 0.3s;
-    > i {
+
+    >i {
       color: @text-color;
       vertical-align: middle;
     }
+
     &:hover {
       background: @pro-header-hover-bg;
     }
+
     &:global(.opened) {
       background: @pro-header-hover-bg;
     }
   }
+
   .search {
     padding: 0 12px;
+
     &:hover {
       background: transparent;
     }
   }
+
   .account {
     .avatar {
-      margin: ~'calc((@{layout-header-height} - 24px) / 2)' 0;
+      margin:~'calc((@{layout-header-height} - 24px) / 2)'0;
       margin-right: 8px;
       color: @primary-color;
       vertical-align: top;
       background: rgba(255, 255, 255, 0.85);
+    }
+
+    button {
+      box-shadow: 0 2px 10px 0 rgba(202, 202, 202, 0.50);
+      border: none;
+      &:hover, &:active, &:focus {
+        color: rgba(0, 0, 0, 0.65);
+        border: none;
+      }
     }
   }
 }
 
 .dark {
   height: @layout-header-height;
+
   .action {
     color: rgba(255, 255, 255, 0.85);
-    > i {
+
+    >i {
       color: rgba(255, 255, 255, 0.85);
     }
+
     &:hover,
     &:global(.opened) {
       background: @primary-color;
@@ -93,12 +132,15 @@
   .dark {
     .action {
       color: @text-color;
-      > i {
+
+      >i {
         color: @text-color;
       }
+
       &:hover {
         color: rgba(255, 255, 255, 0.85);
-        > i {
+
+        >i {
           color: rgba(255, 255, 255, 0.85);
         }
       }
@@ -110,25 +152,61 @@
   :global(.ant-divider-vertical) {
     vertical-align: unset;
   }
+
   .name {
     display: none;
   }
+
   i.trigger {
     padding: 22px 12px;
   }
+
   .logo {
     position: relative;
     padding-right: 12px;
     padding-left: 12px;
   }
+
   .right {
     position: absolute;
     top: 0;
     right: 12px;
+
     .account {
-      .avatar {
+
+      .avatar,
+      .userIcon {
         margin-right: 0;
       }
     }
   }
+}
+
+.project-menu {
+  :global(.ant-dropdown-menu) {
+    width: 170px;
+  }
+  :global(.ant-dropdown-menu-item) {
+    width: 170px;
+  }
+
+  .title {
+    cursor: auto;
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+.project {
+  float: left;
+  width: 170px;
+  cursor: pointer;
+}
+
+.header {
+  padding-left: 36px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
 }

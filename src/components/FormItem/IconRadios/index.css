@@ -1,0 +1,242 @@
+.wrapper {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  cursor: pointer;
+}
+
+.item {
+  height: 80px;
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  overflow: hidden;
+  min-width: 50px;
+}
+
+.image-wrapper {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.active .image-wrapper {
+  border: 1px solid #1890FF;
+  border-radius: 4px;
+}
+
+.active .name {
+  color: #1890FF;
+}
+
+.image-icons {
+  background: rgba(0, 0, 0, 0) url('@/assets/image_icons1.png') no-repeat scroll 0 0 / 20px 1040px;
+  display: inline-block;
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.image-icons-for-instance {
+  margin-left: 4px;
+}
+
+.image-icons::before {
+  display: none;
+}
+
+.image-icons.ubuntu.active {
+  background-position: 0 -42px;
+}
+
+.image-icons.ubuntu {
+  background-position: 0 -562px;
+}
+
+.image-icons.windows.active {
+  background-position: 0 -21px;
+}
+
+.image-icons.windows {
+  background-position: 0 -541px;
+}
+
+.image-icons.centos.active {
+  background-position: 0 -231px;
+}
+
+.centos {
+  background-position: 0 -751px;
+}
+
+.image-icons.ghost.active {
+  background-position: 0 -63px;
+}
+
+.image-icons.ghost {
+  background-position: 0 -583px;
+}
+
+.image-icons.osqa.active {
+  background-position: 0 -84px;
+}
+
+.image-icons.osqa {
+  background-position: 0 -604px;
+}
+
+.image-icons.redmine.active {
+  background-position: 0 -105px;
+}
+
+.image-icons.redmine {
+  background-position: 0 -625px;
+}
+
+.image-icons.moodle.active {
+  background-position: 0 -126px;
+}
+
+.image-icons.moodle {
+  background-position: 0 -646px;
+}
+
+.image-icons.gitlab.active {
+  background-position: 0 -147px;
+}
+
+.image-icons.gitlab {
+  background-position: 0 -667px;
+}
+
+.image-icons.jenkins.active {
+  background-position: 0 -168px;
+}
+
+.image-icons.jenkins {
+  background-position: 0 -688px;
+}
+
+.image-icons.owncloud.active {
+  background-position: 0 -189px;
+}
+
+.image-icons.owncloud {
+  background-position: 0 -709px;
+}
+
+.image-icons.docker.active {
+  background-position: 0 -210px;
+}
+
+.image-icons.docker {
+  background-position: 0 -730px;
+}
+
+.image-icons.openerp.active {
+  background-position: 0 -252px;
+}
+
+.image-icons.openerp {
+  background-position: 0 -772px;
+}
+
+.image-icons.couchdb.active {
+  background-position: 0 -273px;
+}
+
+.image-icons.couchdb {
+  background-position: 0 -793px;
+}
+
+.image-icons.fedora.active {
+  background-position: 0 -315px;
+}
+
+.image-icons.fedora {
+  background-position: 0 -835px;
+}
+
+.image-icons.opensuse.active {
+  background-position: 0 -336px;
+}
+
+.image-icons.opensuse {
+  background-position: 0 -856px;
+}
+
+.image-icons.debian.active {
+  background-position: 0 -357px;
+}
+
+.image-icons.debian {
+  background-position: 0 -877px;
+}
+
+.image-icons.coreos.active {
+  background-position: 0 -378px;
+}
+
+.image-icons.coreos {
+  background-position: 0 -898px;
+}
+
+.image-icons.arch.active {
+  background-position: 0 -294px;
+}
+
+.image-icons.arch {
+  background-position: 0 -814px;
+}
+
+.image-icons.freebsd.active {
+  background-position: 0 -399px;
+}
+
+.image-icons.freebsd {
+  background-position: 0 -919px;
+}
+
+.image-icons.gentoo.active {
+  background-position: 0 -420px;
+}
+
+.image-icons.gentoo {
+  background-position: 0 -940px;
+}
+
+.image-icons.dataman.active {
+  background-position: 0 -441px;
+}
+
+.image-icons.dataman {
+  background-position: 0 -961px;
+}
+
+.image-icons.atomic.active {
+  background-position: 0 -462px;
+}
+
+.image-icons.atomic {
+  background-position: 0 -982px;
+}
+
+.image-icons.all.active {
+  background-position: 0 -480px;
+}
+
+.image-icons.all {
+  background-position: 0 -1000px;
+}
+
+.image-icons.others.active {
+  background-position: 0 0px;
+}
+
+.image-icons.others {
+  background-position: 0 -520px;
+}
+
+.image-icons.active {
+  margin-top: 0px;
+}

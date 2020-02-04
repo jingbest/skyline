@@ -93,7 +93,7 @@ class StandardTable extends Component {
     };
     return (
       <div className={styles.standardTable}>
-        <div className={styles.tableAlert}>
+        <div className={styles['table-alert']}>
           <Alert
             message={
               <Fragment>

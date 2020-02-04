@@ -2,7 +2,16 @@ import { Button, message, notification } from 'antd';
 import React from 'react';
 import { formatMessage } from 'umi-plugin-react/locale';
 import defaultSettings from '../config/defaultSettings';
+import { setupi18n } from './utils/i18n';
+
 const { pwa } = defaultSettings; // if pwa is true
+
+// async function seti18n() {
+//   await setupi18n();
+// }
+setupi18n();
+
+// seti18n();
 
 if (pwa) {
   // Notify user if offline now

@@ -3,22 +3,25 @@
  * You can view component api by:
  * https://github.com/ant-design/ant-design-pro-layout
  */
-import ProLayout, { DefaultFooter, SettingDrawer } from '@ant-design/pro-layout';
-import React, { useEffect } from 'react';
+import ProLayout, { DefaultFooter, SettingDrawer, GetPageTitleProps } from '@ant-design/pro-layout';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'umi/link';
 import { connect } from 'dva';
-import { Icon } from 'antd';
+import { Icon, Button } from 'antd';
 import { formatMessage } from 'umi-plugin-react/locale';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
-import { isAntDesignPro } from '@/utils/utils';
+import HeaderContent from '@/components/GlobalHeader/HeaderContent';
+// import { isAntDesignPro } from '@/utils/utils';
 import logo from '../assets/logo.svg';
+import styles from './BasicLayout.less';
 /**
  * use Authorized check all menu item
  */
 
 const menuDataRender = menuList =>
   menuList.map(item => {
+    // console.log(item);
     const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
     return Authorized.check(item.authority, localItem, null);
   });
@@ -50,6 +53,7 @@ const defaultFooterDom = (
 );
 
 const footerRender = () => {
+  return defaultFooterDom;
   if (!isAntDesignPro()) {
     return defaultFooterDom;
   }
@@ -76,11 +80,11 @@ const footerRender = () => {
 };
 
 const BasicLayout = props => {
-  const { dispatch, children, settings } = props;
+  const { dispatch, children, settings, collapsed } = props;
+  // const [currentCollapsed, setCurrentCollapsed] = useState(collapsed);
   /**
    * constructor
    */
-
   useEffect(() => {
     if (dispatch) {
       dispatch({
@@ -104,40 +108,76 @@ const BasicLayout = props => {
     }
   };
 
+  const handleMenuCollapse3 = () => {
+    if (dispatch) {
+      dispatch({
+        type: 'global/toggleLayoutCollapsed',
+      });
+    }
+  };
+
   return (
     <>
       <ProLayout
+        className={styles.wrapperrrr}
+        siderWidth={236}
         logo={logo}
+        collapsed={collapsed}
         onCollapse={handleMenuCollapse}
         menuItemRender={(menuItemProps, defaultDom) => {
+          // console.log('menuItemProps', menuItemProps);
+          if (menuItemProps.isHidden) {
+            return null;
+          }
           if (menuItemProps.isUrl) {
             return defaultDom;
           }
 
           return <Link to={menuItemProps.path}>{defaultDom}</Link>;
         }}
-        breadcrumbRender={(routers = []) => [
-          {
-            path: '/',
-            breadcrumbName: formatMessage({
-              id: 'menu.home',
-              defaultMessage: 'Home',
-            }),
-          },
-          ...routers,
-        ]}
+        subMenuItemRender={(_, defaultDom) => (
+          <a className="qixian-subMenuItem">{defaultDom}</a>
+        )}
+        breadcrumbRender={(routers = []) => {
+          return [
+            // {
+            //   path: '/',
+            //   breadcrumbName: formatMessage({
+            //     id: 'menu.home',
+            //     defaultMessage: 'Home',
+            //   }),
+            // },
+            ...routers,
+          ]
+        }}
         itemRender={(route, params, routes, paths) => {
-          const first = routes.indexOf(route) === 0;
-          return first ? (
-            <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
-          ) : (
-            <span>{route.breadcrumbName}</span>
-          );
+          // console.log('itemRender', route, params, routes, paths)
+          return <span>{route.breadcrumbName}</span>;
+          // const first = routes.indexOf(route) === 0;
+          // return first ? (
+          //   <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
+          // ) : (
+          //   <span>{route.breadcrumbName}</span>
+          // );
         }}
         footerRender={footerRender}
         menuDataRender={menuDataRender}
         formatMessage={formatMessage}
-        rightContentRender={rightProps => <RightContent {...rightProps} />}
+        headerRender={headerProps => <HeaderContent {...headerProps} />}
+        menuHeaderRender={(logo, title) => (
+          <div id="customize_menu_header">
+            <Link to="/">{logo}</Link>
+            {!collapsed && title }
+            <div onClick={handleMenuCollapse3} className={collapsed ? `${styles['folder-button']} ${styles.active}` : styles['folder-button']}>
+              <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'}></Icon>
+            </div>
+            {/* <div id="customize_menu_header_text">customize_menu_header</div> */}
+          </div>
+        )}
+        // menuHeaderRender={(logo, title) => {
+        //   return <h1>{title}</h1>
+        // }}
+        // rightContentRender={rightProps => <RightContent {...rightProps} />}
         {...props}
         {...settings}
       >
